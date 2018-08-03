@@ -41,4 +41,5 @@ function initializeEvents() {
     thumbnails.forEach(addThumbClickHandler);
 }
 
+
 initializeEvents();

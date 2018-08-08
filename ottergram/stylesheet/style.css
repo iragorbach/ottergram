@@ -111,6 +111,19 @@ a {
     font-size: 40px;
 }
 
+.hidden-detail .detail-image-container {
+    display: none;
+}
+
+.hidden-detail .tumbnail-list {
+    flex-direction: column;
+    align-items: center;
+}
+
+.hidden-detail .tumbnail-item {
+    max-width: 80%;
+}
+
 @media all and (orientation: portrait) {
     .main-content {
         flex-direction: row;

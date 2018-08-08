@@ -1,7 +1,9 @@
 const detailImageSelector = '[data-image-role="target"]';
 const detailTitleSelector = '[data-image-role="title"]';
+const detailFrameSelector = '[data-image-role="frame"]';
 const thumbnailLinkSelector = '[data-image-role="trigger"]';
 const hiddenDetailClass = "hidden-detail";
+const tinyEffectClass = 'is-tiny';
 const escKey = 27;
 
 function setDetails(imageUrl, titleText) {
@@ -29,6 +31,7 @@ function addThumbClickHandler(thumb) {
         console.log('you clicked');
         event.preventDefault();
         setDetailsFromThumb(thumb);
+        showDetailes();
     })
 }
 
@@ -40,6 +43,16 @@ function getThumbnailsArray() {
 
 function hideDetails() {
     document.body.classList.add(hiddenDetailClass);
+}
+
+function showDetailes() {
+    let frame = document.querySelector(detailFrameSelector);
+    document.body.classList.remove(hiddenDetailClass);
+    frame.classList.add(tinyEffectClass);
+    setTimeout(function () {
+        frame.classList.remove(tinyEffectClass);
+    }, 50);
+
 }
 
 function addKeyPressHandler() {
